@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Script to restart icinga2 and print it's state + journalctl
+# Denis Walther -- 23.03.2016
+
+# Variables:
+RESTART="service icinga2 restart"
+STATUS="service icinga2 status"
+JOURNALCTL="journalctl -xn"
+
+# Main function:
+function kicker {
+	$RESTART && $STATUS && $JOURNALCTL
+}
+
+# Running function:
+kicker
+exit 0
+
