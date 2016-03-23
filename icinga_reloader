@@ -9,11 +9,11 @@ STATUS="service icinga2 status"
 JOURNALCTL="journalctl -xn"
 
 # Main function:
-function kicker {
+function reloader {
 	$RELOAD && $STATUS && $JOURNALCTL
 }
 
 # Running function:
-kicker
+reloader
 exit 0
 
